@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Quản Lý Học Tập</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+            <div>
+                <h2>StudyHub</h2>
+                <span>Learning Dashboard</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="active" onclick="showSection('dashboard')">
+                <span>📊</span> Tổng quan
+            </a>
+
+            <a href="#" onclick="showSection('courses')">
+                <span>📚</span> Môn học
+            </a>
+
+            <a href="#" onclick="showSection('tasks')">
+                <span>📝</span> Bài tập
+            </a>
+
+            <a href="#" onclick="showSection('schedule')">
+                <span>📅</span> Lịch học
+            </a>
+
+            <a href="#" onclick="showSection('statistics')">
+                <span>📈</span> Thống kê
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="student-card">
+                <div class="avatar">SV</div>
+                <div>
+                    <strong>Sinh viên</strong>
+                    <small>Người học</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div>
+                <p class="welcome">Chào buổi chiều 👋</p>
+                <h1 id="pageTitle">Tổng quan học tập</h1>
+            </div>
+
+            <div class="header-right">
+                <div class="notification">🔔</div>
+
+                <div class="profile">
+                    <div class="avatar">SV</div>
+                    <div>
+                        <strong>Nguyễn Sinh Viên</strong>
+                        <small>IT Student</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="section">
+
+            <!-- STAT CARDS -->
+            <div class="stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">📚</div>
+                    <div>
+                        <span>Tổng môn học</span>
+                        <h2>06</h2>
+                        <small>Học kỳ hiện tại</small>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">📝</div>
+                    <div>
+                        <span>Bài tập</span>
+                        <h2>12</h2>
+                        <small>4 bài sắp đến hạn</small>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">🎯</div>
+                    <div>
+                        <span>Tiến độ</span>
+                        <h2>78%</h2>
+                        <small>+8% tháng này</small>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">🏆</div>
+                    <div>
+                        <span>Điểm trung bình</span>
+                        <h2>8.2</h2>
+                        <small>Khá tốt</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- CONTENT GRID -->
+            <div class="content-grid">
+
+                <!-- PROGRESS -->
+                <div class="card progress-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Tiến độ học tập</h3>
+                            <p>Theo dõi tiến độ các môn học</p>
+                        </div>
+
+                        <select>
+                            <option>Học kỳ hiện tại</option>
+                            <option>Học kỳ trước</option>
+                        </select>
+                    </div>
+
+                    <div class="progress-list">
+
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Lập trình Python</span>
+                                <strong>90%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill blue-fill" style="width:90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Cơ sở dữ liệu</span>
+                                <strong>82%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill purple-fill" style="width:82%"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Lập trình Web</span>
+                                <strong>75%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill green-fill" style="width:75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Mạng máy tính</span>
+                                <strong>68%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill orange-fill" style="width:68%"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- DEADLINE -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Deadline sắp tới</h3>
+                            <p>Đừng bỏ lỡ bài tập</p>
+                        </div>
+
+                        <button onclick="showSection('tasks')" class="view-btn">
+                            Xem tất cả
+                        </button>
+                    </div>
+
+                    <div class="deadline-list">
+
+                        <div class="deadline">
+                            <div class="deadline-icon red">!</div>
+                            <div>
+                                <strong>Bài tập Python</strong>
+                                <span>Lập trình Python</span>
+                            </div>
+                            <small>2 ngày</small>
+                        </div>
+
+                        <div class="deadline">
+                            <div class="deadline-icon yellow">!</div>
+                            <div>
+                                <strong>Thiết kế Database</strong>
+                                <span>Cơ sở dữ liệu</span>
+                            </div>
+                            <small>4 ngày</small>
+                        </div>
+
+                        <div class="deadline">
+                            <div class="deadline-icon blue">!</div>
+                            <div>
+                                <strong>Web Project</strong>
+                                <span>Lập trình Web</span>
+                            </div>
+                            <small>7 ngày</small>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- TODAY -->
+            <div class="card today-card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Lịch học hôm nay</h3>
+                        <p>Thứ Sáu, 21 tháng 8, 2026</p>
+                    </div>
+
+                    <button class="add-btn" onclick="addSchedule()">
+                        + Thêm lịch
+                    </button>
+                </div>
+
+                <div class="schedule">
+
+                    <div class="schedule-item">
+                        <div class="time">
+                            <strong>07:30</strong>
+                            <span>09:30</span>
+                        </div>
+
+                        <div class="schedule-line blue-line"></div>
+
+                        <div class="schedule-content">
+                            <h4>Lập trình Python</h4>
+                            <span>🏫 Phòng A203</span>
+                        </div>
+
+                        <span class="status ongoing">Đang học</span>
+                    </div>
+
+
+                    <div class="schedule-item">
+                        <div class="time">
+                            <strong>10:00</strong>
+                            <span>12:00</span>
+                        </div>
+
+                        <div class="schedule-line purple-line"></div>
+
+                        <div class="schedule-content">
+                            <h4>Cơ sở dữ liệu</h4>
+                            <span>🏫 Phòng B105</span>
+                        </div>
+
+                        <span class="status upcoming">Sắp tới</span>
+                    </div>
+
+
+                    <div class="schedule-item">
+                        <div class="time">
+                            <strong>13:30</strong>
+                            <span>15:30</span>
+                        </div>
+
+                        <div class="schedule-line green-line"></div>
+
+                        <div class="schedule-content">
+                            <h4>Lập trình Web</h4>
+                            <span>💻 Online</span>
+                        </div>
+
+                        <span class="status upcoming">Sắp tới</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- COURSES -->
+        <section id="courses" class="section hidden">
+
+            <div class="section-title">
+                <h2>📚 Môn học</h2>
+                <p>Danh sách các môn học trong học kỳ</p>
+            </div>
+
+            <div class="course-grid">
+
+                <div class="course-card">
+                    <div class="course-top blue-bg">PY</div>
+                    <h3>Lập trình Python</h3>
+                    <p>Giảng viên: Nguyễn Văn A</p>
+                    <div class="course-progress">
+                        <span>Tiến độ 90%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill blue-fill" style="width:90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-top purple-bg">DB</div>
+                    <h3>Cơ sở dữ liệu</h3>
+                    <p>Giảng viên: Trần Văn B</p>
+                    <div class="course-progress">
+                        <span>Tiến độ 82%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill purple-fill" style="width:82%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-top green-bg">WEB</div>
+                    <h3>Lập trình Web</h3>
+                    <p>Giảng viên: Lê Văn C</p>
+                    <div class="course-progress">
+                        <span>Tiến độ 75%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill green-fill" style="width:75%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-top orange-bg">NET</div>
+                    <h3>Mạng máy tính</h3>
+                    <p>Giảng viên: Phạm Văn D</p>
+                    <div class="course-progress">
+                        <span>Tiến độ 68%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill orange-fill" style="width:68%"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASKS -->
+        <section id="tasks" class="section hidden">
+
+            <div class="section-title">
+                <h2>📝 Bài tập</h2>
+                <p>Quản lý các bài tập và deadline</p>
+            </div>
+
+            <div class="task-list">
+
+                <div class="task">
+                    <div>
+                        <h3>Bài tập Python</h3>
+                        <p>Lập trình Python</p>
+                    </div>
+                    <span class="priority high">Cao</span>
+                    <span>23/08/2026</span>
+                </div>
+
+                <div class="task">
+                    <div>
+                        <h3>Thiết kế Database</h3>
+                        <p>Cơ sở dữ liệu</p>
+                    </div>
+                    <span class="priority medium">Trung bình</span>
+                    <span>25/08/2026</span>
+                </div>
+
+                <div class="task">
+                    <div>
+                        <h3>Website Project</h3>
+                        <p>Lập trình Web</p>
+                    </div>
+                    <span class="priority medium">Trung bình</span>
+                    <span>28/08/2026</span>
+                </div>
+
+                <div class="task">
+                    <div>
+                        <h3>Báo cáo mạng</h3>
+                        <p>Mạng máy tính</p>
+                    </div>
+                    <span class="priority low">Thấp</span>
+                    <span>30/08/2026</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCHEDULE -->
+        <section id="schedule" class="section hidden">
+
+            <div class="section-title">
+                <h2>📅 Lịch học</h2>
+                <p>Lịch học trong tuần</p>
+            </div>
+
+            <div class="calendar-card">
+
+                <div class="calendar-header">
+                    <button onclick="changeWeek(-1)">←</button>
+                    <h3>Tuần này</h3>
+                    <button onclick="changeWeek(1)">→</button>
+                </div>
+
+                <div class="week">
+                    <div>THỨ 2</div>
+                    <div>THỨ 3</div>
+                    <div>THỨ 4</div>
+                    <div>THỨ 5</div>
+                    <div class="today">THỨ 6</div>
+                    <div>THỨ 7</div>
+                    <div>CN</div>
+                </div>
+
+                <div class="week-content">
+                    <div></div>
+                    <div class="calendar-event purple">Database<br>08:00</div>
+                    <div class="calendar-event blue">Python<br>07:30</div>
+                    <div></div>
+                    <div class="calendar-event green">Web<br>13:30</div>
+                    <div class="calendar-event orange">Network<br>08:00</div>
+                    <div></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section id="statistics" class="section hidden">
+
+            <div class="section-title">
+                <h2>📈 Thống kê</h2>
+                <p>Tổng quan kết quả học tập</p>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">📊</div>
+                    <div>
+                        <span>Điểm trung bình</span>
+                        <h2>8.2</h2>
+                        <small>+0.4 so với kỳ trước</small>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✅</div>
+                    <div>
+                        <span>Bài đã hoàn thành</span>
+                        <h2>28</h2>
+                        <small>Trong học kỳ</small>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">⏱️</div>
+                    <div>
+                        <span>Giờ học</span>
+                        <h2>126h</h2>
+                        <small>Tháng này</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="chart-card">
+                <h3>Kết quả học tập</h3>
+
+                <div class="fake-chart">
+                    <div style="height:55%">7.2</div>
+                    <div style="height:70%">7.8</div>
+                    <div style="height:80%">8.1</div>
+                    <div style="height:85%">8.5</div>
+                    <div style="height:90%">8.8</div>
+                    <div style="height:82%">8.2</div>
+                </div>
+
+                <div class="months">
+                    <span>T1</span>
+                    <span>T2</span>
+                    <span>T3</span>
+                    <span>T4</span>
+                    <span>T5</span>
+                    <span>T6</span>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
